@@ -45,22 +45,43 @@ body {
     border: 1px solid #aaa;
     block-size: 32px;
     padding-inline: 0.5em;
-  }
+    border-radius: 8px;
 
+    &[readonly], &:read-only{
+      background-color: #ccc;
+    }
+  }
+}
+
+/* 비활성화 버튼 스타일링 */
+button[disabled], button:disabled{
+  cursor:not-allowed;
 }
 
 /* 상태 디자인 */
 .like-lion{
-  box-shadow: 0 0 0 10px red;
+  padding:10px;
+  border: 1px solid #aaa;
 
+  &:has(input:focus){
+    background: lime;
+  }
+
+  /* &:focus-within{
+    background: yellow;
+  } */
+  
   /* 입력 서식에 마우스 오버 시 */
   input:hover{
-    background: pink;
+    /* background: pink; */
   }
 
   input:focus{
     outline: 0;
-  
+  }
+
+  input:focus-visible{
+    box-shadow: 0 0 1px 2px green;
   }
 }
 
