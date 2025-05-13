@@ -103,9 +103,9 @@ button[disabled], button:disabled{
   } */
   
   /* 입력 서식에 마우스 오버 시 */
-  input:hover{
-    /* background: pink; */
-  }
+  /* input:hover{
+    background: pink;
+  } */
 
   input:focus{
     outline: 0;
