@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+:root{
+  --green-100: #03CC5C;
+  --green-200: #1BF008;
+  --green-300: #03CCA8;
+
+  --gray-100: #BCC3C7;
+  --gray-200: #9B9A90;
+  --gray-300: #6D7478;
+
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+}
+
+/* body 여백 */
 body {
   margin: 3.125rem;
 }
+
 /* 컴포넌트 스타일링 */
 /* 텍스트 로고 */
 .text-logo{
-  --start-color: #1BF008;
-  --end-color: #03CCA8;
   --size: 2.125rem;
 
   display: inline-flex;
@@ -40,15 +53,18 @@ body {
   }
 
   input{
+    --border-color: var(--gray-200);
+    --inactive-color: var(--gray-100);
+
     min-inline-size: 0;
     flex-grow: 1;
-    border: 1px solid #aaa;
+    border: 1px solid var(--border-color);
     block-size: 32px;
     padding-inline: 0.5em;
     border-radius: 8px;
 
     &[readonly], &:read-only{
-      background-color: #ccc;
+      background-color: var(--inactive-color);
     }
   }
 }
@@ -82,6 +98,30 @@ button[disabled], button:disabled{
 
   input:focus-visible{
     box-shadow: 0 0 1px 2px green;
+  }
+}
+
+/* 버튼 스타일링 (원형 그라디언트 버튼)*/
+.circle-button{
+  --size: 1.5rem;
+
+  border: 0;
+  padding: 0;
+  background: var(--start-color) linear-gradient(-45deg, var(--end-color), var(--start-color));
+  inline-size: var(--size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  &::before{
+    content: "";
+    inline-size: 40%;
+    block-size: 40%;
+    background: #fff;
+    border-radius: inherit;
   }
 }
 
