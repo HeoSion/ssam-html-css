@@ -7,15 +7,18 @@ body {
 .text-logo{
   --start-color: #1BF008;
   --end-color: #03CCA8;
+  --size: 34px;
 
-  display: block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
   .text{
     text-transform: uppercase;
-    font-size: 34px;
+    font-size: var(--size);
+    line-height: 0.7;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
-    background-color: pink;
     background-image: linear-gradient(var(--start-color), var(--end-color));
     background-clip: text;
     color: transparent;
