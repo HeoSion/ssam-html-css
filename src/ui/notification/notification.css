@@ -10,6 +10,7 @@ body{
 /* 알림 Notification 컴포넌트 */
 .notification{
   --base-color: #9B9A90;
+  --size: 260px;
 
   border: 1px solid var(--base-color, #9B9A90);
   border-radius: .5rem;
@@ -18,7 +19,7 @@ body{
   flex-flow: row nowrap;
   align-items: center;
   column-gap: 20px;
-  min-inline-size: 260px;
+  min-inline-size: var(--size);
   color: var(--point-color);
 
   svg{
@@ -50,5 +51,21 @@ body{
 
 /* 알림 Notification 리스트 */
 .notification-list{
-  box-shadow: 0 0 0 10px red;
+  --gap: 30px;
+  
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap);
+  
+  .notification{
+    width: 100%;
+
+    @media (width>=600px){
+      width: calc(50% - (var(--gap) / 2));
+    }
+
+    @media (width>=1024px){
+      width: calc(25% - ((var(--gap) * 3) / 4));
+    }
+  }
 }
