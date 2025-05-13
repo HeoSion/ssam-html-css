@@ -1,9 +1,17 @@
+@property --point-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #22BE61;
+}
+
 body{
   margin: 50px;
 }
 /* 알림 Notification */
 .notification{
-  border: 1px solid #9B9A90;
+  --base-color: #9B9A90;
+
+  border: 1px solid var(--base-color, #9B9A90);
   border-radius: .5rem;
   padding: 20px;
   display: flex;
@@ -11,7 +19,7 @@ body{
   align-items: center;
   column-gap: 20px;
   min-inline-size: 260px;
-  color: #22BE61;
+  color: var(--point-color);
 
   svg{
     flex-shrink: 0;
@@ -33,7 +41,7 @@ body{
     }
 
     p{
-      color: #9B9A90;
+      color: var(--base-color, #9B9A90);
       font-size: .875rem;
       inline-size: 100%;
     }
