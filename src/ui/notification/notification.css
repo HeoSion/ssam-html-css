@@ -11,6 +11,7 @@ body{
   align-items: center;
   column-gap: 20px;
   min-inline-size: 260px;
+  color: #22BE61;
 
   svg{
     flex-shrink: 0;
@@ -24,12 +25,10 @@ body{
     row-gap: 4px;
 
     strong{
-      color: #22BE61;
       font-size: 1.125rem;
     }
 
     time{
-      color: #22BE61;
       font-size: 11px;
     }
 
