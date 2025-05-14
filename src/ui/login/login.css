@@ -3,6 +3,8 @@
   --green-100: #03CC5C;
   --green-200: #1BF008;
   --green-300: #03CCA8;
+  
+  --blue-100: #e9f0fd;
 
   --gray-100: #BCC3C7;
   --gray-200: #9B9A90;
@@ -10,6 +12,7 @@
 
   --start-color: var(--green-200);
   --end-color: var(--green-300);
+  --active-color: var(--blue-100);
 }
 
 /* 로그인 폼 스타일링 */
@@ -24,7 +27,7 @@
 
 /* 로고 (SVG) */
 .logo{
-  --size: 230px;
+  --size: clamp(164px, 71.3%, 230px);
 
   display: inline-flex;
   inline-size: var(--size);
@@ -181,26 +184,22 @@
 /* 네이버 로그인 폼 스타일링 */
 .login-container{
   padding-inline: 1.25rem;
+  /* background: #e9f0fd; */
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     inline-size: 500px;
     margin-inline: auto;
   }
 
   .logo{
-    --size: 164px;
-
     display: flex;
     margin-inline: auto;
     margin-block-start: 70px;
     margin-block-end: 45px;
 
-    @media (min-width: 768px) {
-      --size: 230px;
-
+    @media (width >= 768px) {
       margin-block-start: 100px;
       margin-block-end: 50px;
-      /* inline-size: clamp(164px, 71.3% , 230px); */
     }
   }
 
@@ -218,15 +217,15 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      column-gap: 6px;
 
-      @media (max-width: 768px) {
+      @media (width <= 768px) {
         justify-content: end;
 
         .textlink-new, .form-switch{
           display: none;
         }
       }
-
 
       .textlink-new{
         margin-inline-start: auto;
@@ -236,5 +235,25 @@
     .button{
       block-size: 52px;
     }
+  }
+
+  /* 상태 디자인 */
+  :focus{
+    outline: 0 none;
+  }
+
+  .form-input input:focus-visible{
+    border: 1px solid var(--green-100);
+    background: var(--blue-100);
+  }
+
+  button:focus-visible{
+    box-shadow: 0 0 1px 2px #f00;
+  }
+
+  .checkbox-wrapper *:focus-visible{
+    outline: 2px solid var(--green-100);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
