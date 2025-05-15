@@ -3,7 +3,7 @@ body{
   margin: 50px;
 }
 
-.like, .lion {
+.like, .lion, .bootcamp {
   margin-block: 20px;
   inline-size: 500px;
   /* box-shadow: 0 0 0 5px black; */
@@ -11,8 +11,8 @@ body{
   outline-offset: 10px;
   
   div{
-    text-align: center;
-    align-content: center;
+    /* text-align: center;
+    align-content: center; */
     font-weight: 700;
   }
 
@@ -39,6 +39,74 @@ body{
   }
 }
 
+/* Grid 아이템 정렬 */
+.bootcamp{
+  inline-size: 600px;
+  block-size: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 50px;
+  justify-content: center;
+  align-content: center;
+  /* justify-items: center;
+  align-items: center; */
+  /* place-items: end center; */
+
+  .bootcamp-item3{
+    justify-self: end;
+    align-self: end;
+  }
+
+  .bootcamp-item5{
+    place-self: center end;
+  }
+
+}
+
+/* Name 기반으로 아이템 배치 */
+.lion{
+  /* display: inline-grid; */
+  display: grid;
+  block-size: 200px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+    ". item1 item1 item2"
+    ". item1 item1 item6"
+    "item4 item5 item5 item3"
+    "item7 item5 item5 ."
+  ;
+
+  .lion-item1{
+    grid-area: item1;
+  }
+
+  .lion-item2{
+    grid-area: item2;
+  }
+
+  .lion-item3{
+    grid-area: item3;
+  }
+
+  .lion-item4{
+    grid-area: item4;
+  }
+
+  .lion-item5{
+    grid-area: item5;
+  }
+
+  .lion-item6{
+    grid-area: item6;
+  }
+
+  .lion-item7{
+    grid-area: item7;
+  }
+}
+
+/* Line 기반으로 아이템 배치 */
 .like{
   /* inline-size: 100%; */
   min-inline-size: 320px;
@@ -80,10 +148,7 @@ body{
     grid-column: 2;
   }
 
-}
-
-.lion{
-  display: inline-grid;
-  grid-template-columns: 50px 100px 150px 200px;
-  grid-template-rows: 25px 50px 100px;
+  .like-item7{
+    grid-column: 2;
+  }
 }
