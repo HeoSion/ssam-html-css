@@ -16,6 +16,7 @@ body{
   }
 }
 
+/* 애니메이션 속성 학습을 위한 예제 */
 .like{
   border: 5px solid currentColor;
   padding: 10px;
@@ -28,6 +29,23 @@ body{
   animation-delay: 1s;
   animation-fill-mode: both;
   animation-play-state: paused; */
-  animation: zoom 5s 1s 3 alternate ease-in-out forwards running;
+  animation: zoom 5s 1s 3 alternate ease-in-out forwards paused;
 }
   
+/* 공통 스타일 (.case) */
+.case .target-animation{
+  border-radius: .5rem;
+  padding: 1em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--dark-blue);
+  color: var(--white);
+  text-align: center;
+  margin-block: 15px;;
+}
+
+/* Fade 애니메이션 */
+.fade .target-animation{
+  animation: fade 3s infinite linear;
+  animation-play-state: paused;
+} 
