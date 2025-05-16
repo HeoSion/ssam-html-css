@@ -169,6 +169,7 @@ body{
     translate: -50% -50%;
     border-radius: .5rem;
     animation: rotate 500ms infinite linear;
+    animation-play-state: paused;
   }
 
   &::before{
