@@ -29,6 +29,7 @@ body{
 }
 
 /* 단 너비, 갯수 예시 */
+/* 단 전체 사용 */
 .bootcamp{
   background: lightgreen;
   columns: 200px 2;
