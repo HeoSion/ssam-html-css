@@ -31,17 +31,59 @@ body{
   animation-play-state: paused; */
   animation: zoom 5s 1s 3 alternate ease-in-out forwards paused;
 }
+
+/* 공통 스타일 (.container 및 .case) */
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  grid-auto-rows: 18.75rem;
+  gap: 1.25rem;
+  color: #fff;
+
+  hr{
+    display: none;
+  }
+}
+
+.case{
+  border: 1px solid light-dark(#000, #fff);
+  padding: 2.5rem;
+
+  strong{
+    color: #37b24d;
+    display: block;
+    font-size: 20px;
+    margin-block-end: 10px;
+  }
+
+  button{
+    border-radius: .5rem;
+    padding: 0.5em 1em;
+    color: #fff;
+  }
+
+  .toggle-animation {
+    background-color: #4263eb;
+  }
   
-/* 공통 스타일 (.case) */
-.case .target-animation{
-  border-radius: .5rem;
-  padding: 1em;
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: var(--dark-blue);
-  color: var(--white);
-  text-align: center;
-  margin-block: 15px;;
+  .toggle-animation.paused {
+    background-color: #e03131;
+  }
+
+  .reset-animation {
+    background-color: #15aabf;
+  }
+
+  .target-animation {
+    margin-top: 2.5rem;
+    margin-block-start: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+    align-content: center;
+    padding: .625rem;
+    border-radius: .5rem;
+    background: linear-gradient(135deg, #37b24d, #2b8a3e);
+  }
 }
 
 /* Fade 애니메이션 */
@@ -65,5 +107,37 @@ body{
 /* Shake 애니메이션 */
 .shake .target-animation{
   animation: shake 2s infinite ease-in-out alternate;
-  animation-play-state: running;
+  animation-play-state: paused;
+}
+
+/* Spin 애니메이션 */
+.spin .target-animation{
+  width: 120px;
+  aspect-ratio: 1;
+  background: conic-gradient(red 0% 25%, green 25% 50%, blue 50% 75%, purple 75% 100%);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  animation-play-state: paused;
+}
+
+/* Pulse 애니메이션 */
+.pulse .target-animation{
+  animation: pulse 1s infinite ease-in-out alternate;
+  animation-play-state: paused;
+}
+
+/* Flip 애니메이션 */
+.flip{
+  perspective: 500px;
+
+  .target-animation{
+    animation: flip 1s infinite ease-in-out;
+    animation-play-state: paused;
+  }
+}
+
+/* Wobble 애니메이션 */
+.wobble .target-animation{
+  animation: wobble 1s infinite ease-in-out;
+  animation-play-state: paused;
 }
