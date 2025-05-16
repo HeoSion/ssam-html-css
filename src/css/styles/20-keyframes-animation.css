@@ -141,3 +141,37 @@ body{
   animation: wobble 1s infinite ease-in-out;
   animation-play-state: paused;
 }
+
+/* CSS 변수를 활용한 애니메이션 */
+
+
+.rotate{
+  /* background: #000; */
+}
+.rotate .target-animation{
+  --rotation: 0deg;
+
+  inline-size: 120px;
+  aspect-ratio: 1;
+  position: relative;
+
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    background: conic-gradient(from var(--rotation), red 0 30%, transparent 30% 100%);
+    z-index: -1;
+    padding: 5px;
+    inline-size: 100%;
+    block-size: 100%;
+    box-sizing: content-box;
+    translate: -50% -50%;
+    border-radius: .5rem;
+    animation: rotate 500ms infinite linear;
+  }
+
+  &::before{
+    filter: blur(10px)
+  }
+}
