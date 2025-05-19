@@ -144,10 +144,6 @@ body{
 
 /* CSS 변수를 활용한 애니메이션 */
 
-
-.rotate{
-  /* background: #000; */
-}
 .rotate .target-animation{
   --rotation: 0deg;
 
